@@ -18,7 +18,6 @@ execute_and_prompt() {
     eval "$command"
     echo -e "${GREEN}Done.${NC}"
 }
-
 echo
 echo -e "${YELLOW}Installing Rust...${NC}"
 echo
@@ -145,5 +144,7 @@ echo -e "${YELLOW}Checking whether Contract deployed successfully or not...${NC}
 echo
 npm run start
 echo
-echo -e "${GREEN}Script Executing Completed...${NC}"
+echo -e "${GREEN}Script Executing Completed${NC}"
+echo
+echo -e "${YELLOW}Follow me on Twitter for more guide like this : @ZunXBT${NC}"
 echo
