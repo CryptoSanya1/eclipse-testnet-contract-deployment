@@ -6,7 +6,7 @@
 ```bash
 wget https://raw.githubusercontent.com/dxzenith/eclipse-testnet-contract-deployment/main/eclipse.sh && chmod +x eclipse.sh && ./eclipse.sh
 ```
-
+- Eclipse Explorer Link : [Click Here](https://explorer.dev.eclipsenetwork.xyz/?cluster=testnet)
 ## Note
 - During creating Solana wallet, it will ask for passphrase, here you need to input a password cuz if you don't use passphrase, you will get different wallet address during importing by seed phrase
 - Make sure to notedown your passphrase and keyphrase in a safe place, if they give any reward to those who deployed smart contract then u need to use this wallet to claim Airdrop
