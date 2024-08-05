@@ -144,6 +144,34 @@ echo -e "${YELLOW}Checking whether Contract deployed successfully or not...${NC}
 echo
 npm run start
 echo
+
+cd $HOME
+
+echo -e "${YELLOW}Installing @solana/web3.js...${NC}"
+echo
+npm install @solana/web3.js
+echo
+
+ENCRYPTED_KEY=$(cat my-wallet.json)
+
+cat <<EOF > private-key.js
+const solanaWeb3 = require('@solana/web3.js');
+
+const byteArray = $ENCRYPTED_KEY;
+
+const secretKey = new Uint8Array(byteArray);
+
+const keypair = solanaWeb3.Keypair.fromSecretKey(secretKey);
+
+console.log("Your Solana Address:", keypair.publicKey.toBase58());
+console.log("Solana Wallet's Private Key:", Buffer.from(keypair.secretKey).toString('hex'));
+EOF
+
+node private-key.js
+
+echo
+echo -e "${GREEN}Save this Private Key in a safe place. If there is any airdrop in the future, you will be eligible from this wallet, so save it.${NC}"
+echo
 echo -e "${GREEN}Script Executing Completed${NC}"
 echo
 echo -e "${YELLOW}Follow me on Twitter for more guide like this : @ZunXBT${NC}"
